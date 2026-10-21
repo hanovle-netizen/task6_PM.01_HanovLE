@@ -1,0 +1,36 @@
+<Window x:Class="BikeDrive.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ВелосипедДрайв — Вход в систему"
+        Width="460" Height="560" MinWidth="420" MinHeight="520"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="{StaticResource AdditionalBackgroundBrush}" Padding="16">
+            <StackPanel>
+                <Image Source="pack://application:,,,/Resources/logo.png" Height="90"
+                       RenderOptions.BitmapScalingMode="HighQuality"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="1" Margin="40,24">
+            <TextBlock Text="Вход в систему" FontSize="22" FontWeight="Bold"
+                       Foreground="{StaticResource AccentBrush}" Margin="0,0,0,16"/>
+
+            <TextBlock Text="Логин" Margin="0,0,0,4"/>
+            <TextBox x:Name="LoginTextBox" Margin="0,0,0,12"/>
+
+            <TextBlock Text="Пароль" Margin="0,0,0,4"/>
+            <PasswordBox x:Name="PasswordBox" Margin="0,0,0,20"/>
+
+            <Button x:Name="LoginButton" Content="Войти" Style="{StaticResource AccentButton}"
+                    IsDefault="True" Click="LoginButton_Click" Margin="0,0,0,10"/>
+            <Button x:Name="GuestButton" Content="Войти как гость" Style="{StaticResource SecondaryButton}"
+                    Click="GuestButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
